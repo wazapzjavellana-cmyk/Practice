@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>My Practice Website</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <p>This is my first practice website.</p>
+</body>
+</html>
+<script>
+  fetch('/students')
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById('students');
+      data.forEach(s => {
+        const li = document.createElement('li');
+        li.textContent = s.name;
+        list.appendChild(li);
+      });
+    });
+</script>
